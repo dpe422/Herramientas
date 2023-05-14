@@ -1,0 +1,7 @@
+
+pass,password demasiado corto
+pass5,********
+passl678,********
+passlongitud15,************
+passordsuperlarguisimimomayor de 40 carecteres no se que escribir,password demasiado largo
+otrocaso10,**********

@@ -1,0 +1,15 @@
+language: java
+sudo: false # faster builds
+jdk: openjdk8
+
+before_script: cd sesion05Junit
+
+script: "mvn test -B cobertura:cobertura"
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
