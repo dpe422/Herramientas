@@ -61,5 +61,12 @@ pipeline {
         }
       }
     }
+	stage('SonarQube analysis') {
+    steps {
+      withSonarQubeEnv(credentialsId: 'sonar_server_dpe', installationName: 'servidor_sonarqubedpe') { 
+        sh 'mvn -f junitEjercicios-master/sesion05dpe422/pom.xml sonar:sonar' 
+      }
+    }
+  }
   }
 }
