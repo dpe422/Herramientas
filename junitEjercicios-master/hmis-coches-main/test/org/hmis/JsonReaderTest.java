@@ -28,7 +28,7 @@ class JsonReaderTest {
 	}
 
 	@ParameterizedTest (name = "{index} => Con entrada ({0}) sale {1}")
-	@CsvSource({"data/coches.json, 4"})//,  "data/hola,0"
+	@CsvSource({"data/coches.json, 4",  "data/hola,0"})
 	void testLeerCochesJSONPar(String ruta, int expected) {		
 		Coche [] coches = JsonReader.leerCochesJSON(ruta);
 		if (coches==null) {
@@ -40,7 +40,7 @@ class JsonReaderTest {
 	
 	
 	@ParameterizedTest
-	@CsvSource({"true, Toyota, Corolla, 2022, 22000","false, Toyota, Corolla, 2022, 22001"})
+	@CsvSource({"true, Toyota, Corolla, 2022, 22000", "false, Toyota, Corolla, 2022, 22001"})
 	void testLeerCochesJSONprimeroPar(boolean expected, @AggregateWith(CocheAggregator.class) Coche primero) {
 		String ruta = "data/coches.json";
 		Coche [] coches = JsonReader.leerCochesJSON(ruta);
